@@ -10,6 +10,4 @@ def solution(p: float, x: np.array) -> tuple:
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
     alpha = 1 - p
-    size = len(x)
-    return np.sqrt(2*size / ((x**2).mean()*38**2 * chi2.ppf(q=1 - alpha / 2, df=2 * size))), \
-           np.sqrt(2*size / ((x**2).mean()*38**2 * chi2.ppf(q=alpha / 2, df=2 * size)))
+    return (-min(-x) - 1/2)*2/38**2, (-np.log(alpha)/len(x) - min(-x) - 1/2)*2/38**2
